@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 
 class Player {
     String name;
@@ -6,6 +7,16 @@ class Player {
     Player(String str) {
 	this.name = str;
     }
+
+    String getName() {
+	return this.name;
+    }
+
+    void Greeting() {
+	System.out.println("Hello, " + getName() + "!");
+    }
+
+    
 }
 
 class Die {
@@ -30,14 +41,20 @@ class Die {
 
 class DiceGame {
     public static void main(String[] args) {
+	Scanner s = new Scanner(System.in);
+
 	int i = 0, sum = 0;
 	Die[]  di = {
 	    new Die(),
 	    new Die(),
 	};
+	
+	System.out.println("What is your name?");
+	System.out.print("> ");
 
-  
-
+	Player p = new Player(s.nextLine());
+	p.Greeting();
+	
 	System.out.println("Rolling the dice . . .");
 
 
