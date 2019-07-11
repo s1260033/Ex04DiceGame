@@ -62,6 +62,15 @@ class DiceGame {
 	    System.out.printf("Die %d: %d\n",i+1,di[i].getFaceValue());
 	    sum += di[i].getFaceValue();
 	}
+	
+	if(di[0].getFaceValue() == di[1].getFaceValue()) {
+	    System.out.println("Dices show the same number!");
+	    System.out.println("You can play the dice again!");
+	    Die chance = new Die();
+	    System.out.printf("Die 3: %d\n",chance.getFaceValue());
+	    sum += chance.getFaceValue();
+	}
+	else sum = sum;
 
 	System.out.printf("Total value: %d\n",sum);
 
